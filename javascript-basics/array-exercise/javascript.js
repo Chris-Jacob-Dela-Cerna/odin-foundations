@@ -35,3 +35,8 @@ filterRangeInPlace(arr3, 85, 100)
 console.log(arr1)
 console.log(arr2)
 console.log(arr3)
+
+
+console.log(arr1.sort().reverse())
+console.log(arr2.sort().reverse())
+console.log(arr3.sort().reverse())

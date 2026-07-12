@@ -1,11 +1,9 @@
 
 
 function camelize(str) {
-  let camelWord = str.split("-")
-  firstWord = camelWord.shift()
-  camelWord = camelWord.map((word) => word[0].toUpperCase() + word.slice(1))
-  camelWord.unshift(firstWord)
-  return camelWord.join("")
+  return str.split("-")
+            .map((word, index) => index === 0 ? word.toLowerCase() : word[0].toUpperCase() + word.slice(1))
+            .join("")
 }
 
 console.log(camelize("john-doe"))

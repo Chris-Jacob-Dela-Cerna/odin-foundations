@@ -1,16 +1,17 @@
-const input = document.querySelector("#item"),
-      enter = document.querySelector("button"),
-      ul = document.querySelector("ul");
-enter.addEventListener("click", (event) => {
+const textField = document.getElementById("field"),
+      addButton = document.getElementById("add"),
+      list = document.getElementById("list");
+
+addButton.addEventListener("click", (event) => {
   event.preventDefault()
-  const item = input.value
-  input.value = ""
-  const li = document.createElement("li"),
-        span = document.createElement("span"),
-        del = document.createElement("button");
-  li.appendChild(span)
-  li.appendChild(del)
-  span.textContent = item
-  del.textContent = "Delete"
-  ul.appendChild(li)
+  const itemName = textField.value
+  textField.value = ""
+  const item = document.createElement("li"),
+        name = document.createElement("span"),
+        deleteButton = document.createElement("button");
+  item.appendChild(name)
+  item.appendChild(deleteButton)
+  name.textContent = itemName
+  deleteButton.textContent = "Delete"
+  list.appendChild(item)
 });

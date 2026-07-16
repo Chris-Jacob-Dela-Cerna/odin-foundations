@@ -3,15 +3,21 @@ const textField = document.getElementById("field"),
       list = document.getElementById("list");
 
 addButton.addEventListener("click", (event) => {
-  event.preventDefault()
-  const itemName = textField.value
-  textField.value = ""
-  const item = document.createElement("li"),
-        name = document.createElement("span"),
-        deleteButton = document.createElement("button");
-  item.appendChild(name)
-  item.appendChild(deleteButton)
-  name.textContent = itemName
-  deleteButton.textContent = "Delete"
-  list.appendChild(item)
+  event.preventDefault();
+
+  const itemName = textField.value,
+        name = document.createElement("span");
+  name.textContent = itemName;
+  textField.value = "";
+
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", (event) => {
+    list.removeChild(event.target.parentElement)
+  });
+
+  const item = document.createElement("li");
+  item.appendChild(name);
+  item.appendChild(deleteButton);
+  list.appendChild(item);
 });

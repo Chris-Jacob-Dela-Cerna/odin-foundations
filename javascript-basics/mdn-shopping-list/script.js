@@ -2,6 +2,8 @@ const textField = document.getElementById("field"),
       addButton = document.getElementById("add"),
       list = document.getElementById("list");
 
+textField.focus()
+
 addButton.addEventListener("click", (event) => {
   event.preventDefault();
 

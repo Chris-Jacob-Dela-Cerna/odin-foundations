@@ -45,3 +45,21 @@ function getAverageAge(arr) {
   return arr.reduce((total, current) => total + current.age, 0) / arr.length
 }
 console.log("4. " + getAverageAge(arr2));
+
+
+
+let users3 = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+function groupById(users) {
+  return users.reduce((acc, current) => {
+    acc[current.id] = current;
+    return acc;
+  }, {}
+)};
+
+let usersById = groupById(users3);
+console.log(usersById)

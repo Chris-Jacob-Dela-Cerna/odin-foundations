@@ -33,3 +33,15 @@ function sortByAge(arr) {
 
 sortByAge(arr);
 console.log(arr);
+
+
+
+let john4 = {name: "John", age: 25};
+let pete4 = {name: "Pete", age: 30};
+let mary4 = {name: "Mary", age: 29};
+let arr2 = [john4, pete4, mary4];
+
+function getAverageAge(arr) {
+  return arr.reduce((total, current) => total + current.age, 0) / arr.length
+}
+console.log("4. " + getAverageAge(arr2));
